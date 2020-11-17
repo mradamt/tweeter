@@ -1,0 +1,14 @@
+header {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #D3163B;
+  background-image: url(../images/argyle.png);
+  color: white;
+}
+
+#avatar-header {
+  margin-top: 1em;
+}
