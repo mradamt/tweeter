@@ -60,6 +60,15 @@ $(document).ready(() => {
     // Prevent browser refresh
     event.preventDefault();
     
+    // Validate user input
+    const $data = $('#tweet-text')
+    if (!$data.val()) {
+      return alert('Empty tweets not allowed')
+    }
+    if ($data.val().length > 140) {
+      return alert('Tweet exceeds 140 characters')
+    }
+
     /* Make AJAX post request using serialized form data
      * On return (use .done(), .then() doesn't seem to work)
      * then TODO: figure out how to append tweets to top of page */
@@ -67,6 +76,9 @@ $(document).ready(() => {
       url: '/tweets', 
       method: 'post', 
       data: $(this).serialize(), 
+    }).done((data) => {
+      console.log(data)
+      $data.val('')
     })
   });
 
