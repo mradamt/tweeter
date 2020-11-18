@@ -2,8 +2,9 @@
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+*/
 
+// TEMP: Dummy tweets data
 const twoots = [
   {
     "user": {
@@ -14,25 +15,25 @@ const twoots = [
     "content": {
         "text": "If I have seen further it is by standing on the shoulders of giants"
       },
-    "created_at": 1461116232227
- },
- {
-  "user": {
-    "name": "Bingbong",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@sizzler"
-    },
-  "content": {
-      "text": "You've never seen a twerk like mine"
-    },
-  "created_at": 1461116232211
-},
+    "created_at": new Date(2020, 10, 1)
+  },
+  {
+    "user": {
+      "name": "Bingbong",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@sizzler"
+      },
+    "content": {
+        "text": "You've never seen a twerk like mine"
+      },
+    "created_at": 1605546132560
+  },
 ]
 
 
 const createTweetElement = function(tweetObj) {
   const now = new Date();
-  let tweetArticle = `
+  let tweetHtml = `
     <article class="tweet">
       <header>
         <div>
@@ -52,29 +53,20 @@ const createTweetElement = function(tweetObj) {
       </footer>
     </article>
   `
-  return tweetArticle
+  return tweetHtml;
 }
 
-
-
+// Once document finished loading...
 $(document).ready(() => {
 
+  // Render each tweet in db, appending to #tweets-container html id
   const renderTweets = function(tweetsArr) {
     let $tweet;
     for (const tweet of tweetsArr) {
-      $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet)
+      $('#tweets-container').append(createTweetElement(tweet))
     }
   }
 
   renderTweets(twoots)
-  // const $tweet = $(`<article class="tweet">Hello world</article>`);
-  // // $('#tweets-container').append($tweet)
-
-  // for (const twoot of twoots) {
-  // //   // tweetArticle = createTweetElement(twoot)
-  //   $('#tweets-container').append(`${twoot}`)
-  //   // $('#tweets-container').append(`<article class="tweet">${twoot}</article>`)
-  // }
 
 })
