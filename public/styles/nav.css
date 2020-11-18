@@ -15,6 +15,11 @@ nav #tweeter-logo {
   font-family: 'Bungee', cursive;
 }
 
+#navbar-right-side {
+  display: flex;
+  flex-direction: column;
+}
+
 #navbar-right-side img {
   height: 1em;
 }
