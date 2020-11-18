@@ -40,8 +40,8 @@ const createTweetElement = function(tweetObj) {
  *****************************************/
 $(document).ready(() => {
 
-  /* Fetch tweets array from server and pass to next function */
   const loadTweets = function() {
+  /* Fetch tweets array from server and pass array to render function */
     $.ajax('/tweets')
     .then(function(data) {
       renderTweets(data)
