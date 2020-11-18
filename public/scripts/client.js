@@ -71,6 +71,22 @@ $(document).ready(() => {
     }
   };
 
+  // Capture form submission, prevent default behaviour, post using AJAX
+  $('.new-tweet form').submit(function(event) {
+    event.preventDefault();
+    
+    /* Make AJAX post request using serialized form data
+     * On return (use .done(), .then() doesn't seem to work)
+     * make a get request to check data has entered db */
+    $.ajax({
+      url: '/tweets', 
+      method: 'post', 
+      data: $(this).serialize(), 
+    }).done(
+      console.log('twoots db:', $.ajax('/tweets'))
+    )
+  });
+
   renderTweets(twoots);
 
 });
