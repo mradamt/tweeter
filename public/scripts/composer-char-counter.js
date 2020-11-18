@@ -1,5 +1,3 @@
-const { countReset } = require("console")
-
 $(document).ready(function() {
 
   /* Event listener to track character count of text input, 
