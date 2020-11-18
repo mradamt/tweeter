@@ -32,7 +32,12 @@ const twoots = [
 
 
 const createTweetElement = function(tweetObj) {
-  const now = new Date();
+  // Calculate tweet age in days, rounded down
+  const tweetAge =  Math.floor(
+                      (new Date() - tweetObj.created_at) / 
+                      (1000 * 60 * 60 * 24)
+                    );
+  // Insert tweet data into html template as it should appear in tweets feed section
   let tweetHtml = `
     <article class="tweet">
       <header>
@@ -44,7 +49,7 @@ const createTweetElement = function(tweetObj) {
       </header>
       <p>${tweetObj.content.text}</p>
       <footer>
-        <span>${now - tweetObj.created_at}</span>
+        <span>${tweetAge} days ago</span>
         <div class="tweet-actions">
           <a href="#"><img src="/images/flag-tweet.png" alt="Flag tweet"></a>
           <a href="#"><img src="/images/share-tweet.png" alt="Share tweet"></a>
