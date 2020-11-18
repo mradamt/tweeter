@@ -29,11 +29,9 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span id="tweeter-logo">tweeter</span>
-      <span id="write-new-tweet">
-          <strong>Write</strong> a new tweet
-          <br>
-          <!-- TODO: link anchor below to write new tweet functionality -->
-          <a href="#">ICON</a>
+      <span id="navbar-right-side">
+          <strong>Write</strong> a new tweet<br>
+          <a href="#tweet-text"><img src="/images/down-chevron-green.png" alt="down-chevron"></a>
       </span>
     </nav>
 
@@ -51,8 +49,8 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
-          <label for="tweet-text">Twoot me like one of your French girls</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <label for="tweet-text"></label>
+          <textarea name="text" id="tweet-text" placeholder="Twoot me like one of your French girls"></textarea>
           <footer>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>

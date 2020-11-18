@@ -11,10 +11,10 @@ nav {
   width: 100%;
 }
 
-#tweeter-logo {
+nav #tweeter-logo {
   font-family: 'Bungee', cursive;
 }
 
-nav a {
-  color: #ffffff;
+#navbar-right-side img {
+  height: 1em;
 }
