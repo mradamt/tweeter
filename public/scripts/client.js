@@ -35,11 +35,12 @@ const createTweetElement = function(tweetObj) {
   return tweetHtml;
 };
 
-
-// Once document finished loading...
+/*****************************************
+ *  On full document load
+ *****************************************/
 $(document).ready(() => {
 
-  // Fetch tweets from server then call renderTweets() to display on page
+  /* Fetch tweets array from server and pass to next function */
   const loadTweets = function() {
     $.ajax('/tweets')
     .then(function(data) {
@@ -47,15 +48,16 @@ $(document).ready(() => {
     });
   }
 
-  // Render each tweet in db, appending to #tweets-container html id
+  /* Render tweets database into #tweets-container */
   const renderTweets = function(tweetsArr) {
     for (const tweet of tweetsArr) {
       $('#tweets-container').append(createTweetElement(tweet));
     }
   };
 
-  // Capture form submission, prevent default behaviour, post using AJAX
+  /* POST new tweet data to server */
   $('.new-tweet form').submit(function(event) {
+    // Prevent browser refresh
     event.preventDefault();
     
     /* Make AJAX post request using serialized form data
