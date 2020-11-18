@@ -40,18 +40,23 @@ const createTweetElement = function(tweetObj) {
  *****************************************/
 $(document).ready(() => {
 
-  const loadTweets = function() {
   /* Fetch tweets array from server and pass array to render function */
+  const loadTweets = function(n) {
     $.ajax('/tweets')
     .then(function(data) {
-      renderTweets(data)
+      // If 'n' is specified, call render on nth-last item, *as an [array]*
+      if (n) {
+        renderTweets([data[data.length - n]])
+      } else {
+        renderTweets(data)
+      }
     });
   }
 
   /* Render tweets database into #tweets-container */
   const renderTweets = function(tweetsArr) {
     for (const tweet of tweetsArr) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
@@ -72,14 +77,17 @@ $(document).ready(() => {
     /* Make AJAX post request using serialized form data
      * On return (use .done(), .then() doesn't seem to work)
      * then TODO: figure out how to append tweets to top of page */
-    $.ajax({ 
-      url: '/tweets', 
-      method: 'post', 
-      data: $(this).serialize(), 
-    }).done((data) => {
-      console.log(data)
-      $data.val('')
-    })
+    $.ajax(
+      { 
+        url: '/tweets', 
+        method: 'post', 
+        data: $(this).serialize(), 
+      })
+      .done(function() {
+        $data.val('')
+        loadTweets(1)
+      }
+    )
   });
 
   loadTweets();
