@@ -11,10 +11,10 @@ const twoots = [
       "name": "Newton",
       "avatars": "https://i.imgur.com/73hZDYK.png",
       "handle": "@SirIsaac"
-      },
+    },
     "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
     "created_at": new Date(2020, 10, 1)
   },
   {
@@ -22,21 +22,21 @@ const twoots = [
       "name": "Bingbong",
       "avatars": "https://i.imgur.com/73hZDYK.png",
       "handle": "@sizzler"
-      },
+    },
     "content": {
-        "text": "You've never seen a twerk like mine"
-      },
+      "text": "You've never seen a twerk like mine"
+    },
     "created_at": 1605546132560
   },
-]
+];
 
 
 const createTweetElement = function(tweetObj) {
   // Calculate tweet age in days, rounded down
   const tweetAge =  Math.floor(
-                      (new Date() - tweetObj.created_at) / 
-                      (1000 * 60 * 60 * 24)
-                    );
+    (new Date() - tweetObj.created_at) /
+    (1000 * 60 * 60 * 24)
+  );
   // Insert tweet data into html template as it should appear in tweets feed section
   let tweetHtml = `
     <article class="tweet">
@@ -57,21 +57,20 @@ const createTweetElement = function(tweetObj) {
         </div>
       </footer>
     </article>
-  `
+  `;
   return tweetHtml;
-}
+};
 
 // Once document finished loading...
 $(document).ready(() => {
 
   // Render each tweet in db, appending to #tweets-container html id
   const renderTweets = function(tweetsArr) {
-    let $tweet;
     for (const tweet of tweetsArr) {
-      $('#tweets-container').append(createTweetElement(tweet))
+      $('#tweets-container').append(createTweetElement(tweet));
     }
-  }
+  };
 
-  renderTweets(twoots)
+  renderTweets(twoots);
 
-})
+});
