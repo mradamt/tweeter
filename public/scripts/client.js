@@ -4,33 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-// TEMP: Dummy tweets data
-const twoots = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": new Date(2020, 10, 1)
-  },
-  {
-    "user": {
-      "name": "Bingbong",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@sizzler"
-    },
-    "content": {
-      "text": "You've never seen a twerk like mine"
-    },
-    "created_at": 1605546132560
-  },
-];
-
-
+// Insert tweet data into html template ready to display on main page
 const createTweetElement = function(tweetObj) {
   // Calculate tweet age in days, rounded down
   const tweetAge =  Math.floor(
@@ -61,16 +35,59 @@ const createTweetElement = function(tweetObj) {
   return tweetHtml;
 };
 
-// Once document finished loading...
+/*****************************************
+ *  On full document load
+ *****************************************/
 $(document).ready(() => {
 
-  // Render each tweet in db, appending to #tweets-container html id
+  /* Fetch tweets array from server and pass array to render function */
+  const loadTweets = function(n) {
+    $.ajax('/tweets')
+      .then(function(data) {
+        // If 'n' is specified, call render on nth-last item, *as an [array]*
+        if (n) {
+          renderTweets([data[data.length - n]]);
+        } else {
+          renderTweets(data);
+        }
+      });
+  };
+
+  /* Render tweets database into #tweets-container */
   const renderTweets = function(tweetsArr) {
     for (const tweet of tweetsArr) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
-  renderTweets(twoots);
+  /* POST new tweet data to server */
+  $('.new-tweet form').submit(function(event) {
+    // Prevent browser refresh
+    event.preventDefault();
+    
+    // Validate user input
+    const $data = $('#tweet-text');
+    if (!$data.val()) {
+      return alert('Empty tweets not allowed');
+    }
+    if ($data.val().length > 140) {
+      return alert('Tweet exceeds 140 characters');
+    }
 
+    /* Make AJAX post request using serialized form data
+     * On return (use .done(), .then() doesn't seem to work)
+     * then TODO: figure out how to append tweets to top of page */
+    $.ajax(
+      {
+        url: '/tweets',
+        method: 'post',
+        data: $(this).serialize(),
+      })
+      .done(function() {
+        $data.val('');
+        loadTweets(1);
+      });
+  });
+
+  loadTweets();
 });
