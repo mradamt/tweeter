@@ -19,6 +19,15 @@
   font-weight: 700;
 }
 
+#tweet-validation-msg {
+  font-weight: 300;
+  color: #ff0033;
+  font-size: 20px;
+  padding-top: 12px;
+  padding-left: 12px;
+  font-style: italic;
+}
+
 .new-tweet form footer {
   font-family: 'Bungee', cursive;
   display: flex;

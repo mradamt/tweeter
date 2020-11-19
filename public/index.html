@@ -22,7 +22,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter-validator.js"></script>
     <script type="text/javascript" src="/scripts/textarea-auto-resize.js"></script>
   </head>
 
@@ -52,6 +52,7 @@
         <form action="/tweets/" method="POST">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" placeholder="Twoot me like one of your French girls"></textarea>
+          <label for="tweet-text" id="tweet-validation-msg"></label>
           <footer>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>

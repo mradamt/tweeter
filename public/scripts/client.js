@@ -72,14 +72,17 @@ $(document).ready(() => {
   $('.new-tweet form').submit(function(event) {
     // Prevent browser refresh
     event.preventDefault();
-    
-    // Validate user input
+
+    /* Validate user input, flash validation message
+     * NOTE validation messages specified in composer-char-counter-validator.js */
     const $data = $('#tweet-text');
     if (!$data.val()) {
-      return alert('Empty tweets not allowed');
+      $('#tweet-validation-msg').fadeOut(100).fadeIn(200)
+      return;
     }
     if ($data.val().length > 140) {
-      return alert('Tweet exceeds 140 characters');
+      $('#tweet-validation-msg').fadeOut(100).fadeIn(200)
+      return;
     }
 
     /* Make AJAX post request using serialized form data

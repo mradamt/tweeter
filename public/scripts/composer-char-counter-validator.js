@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  const valdiationMsg = {
+    emptyTweet: 'Empty tweets not allowed to be posted',
+    tooLong: 'Too long. Tweets are limited to 140 characters'
+  };
+
+  // Set initial state (empty tweet)
+  $('#tweet-validation-msg').text(valdiationMsg.emptyTweet).fadeOut(100);
 
   /* Event listener to track character count of text input,
    * update 'counter' immediately, and change colour of counter
@@ -16,9 +23,18 @@ $(document).ready(function() {
 
     // Change COLOR of counter element to red when negative
     if ($counterEl.val() < 0) {
-      $('.counter').css("color", "red");
+      $('.counter').css("color", "#ff0033");
     } else {
       $('.counter').css("color", "inherit");
+    }
+      
+    // Modify validation messages for too short/long tweets based on current length
+    if ($counterEl.val() < 0) {
+      $('#tweet-validation-msg').text(valdiationMsg.tooLong).fadeIn(300);
+    } else if (Number($counterEl.val()) === 140) {
+      $('#tweet-validation-msg').text(valdiationMsg.emptyTweet);
+    } else {
+      $('#tweet-validation-msg').fadeOut(100);
     }
   });
 });
