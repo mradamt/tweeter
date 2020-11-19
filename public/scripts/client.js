@@ -77,11 +77,11 @@ $(document).ready(() => {
      * NOTE validation messages specified in composer-char-counter-validator.js */
     const $data = $('#tweet-text');
     if (!$data.val()) {
-      $('#tweet-validation-msg').fadeOut(100).fadeIn(200)
+      $('#tweet-validation-msg').fadeOut(100).fadeIn(200);
       return;
     }
     if ($data.val().length > 140) {
-      $('#tweet-validation-msg').fadeOut(100).fadeIn(200)
+      $('#tweet-validation-msg').fadeOut(100).fadeIn(200);
       return;
     }
 
