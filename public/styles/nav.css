@@ -19,8 +19,14 @@ nav #tweeter-logo {
 #navbar-right-side {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #navbar-right-side img {
   height: 24px;
+  transition: transform 0.1s;
+}
+
+#navbar-right-side img:hover {
+  transform: scale(1.4);
 }

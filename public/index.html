@@ -24,6 +24,7 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter-validator.js"></script>
     <script type="text/javascript" src="/scripts/composer-toggler.js"></script>
+    <script type="text/javascript" src="/scripts/scroll-to-top.js"></script>
     <script type="text/javascript" src="/scripts/textarea-auto-resize.js"></script>
   </head>
 
@@ -33,9 +34,14 @@
       <span id="tweeter-logo">tweeter</span>
       <div id="navbar-right-side">
           <span><strong>Write</strong> a new tweet</span>
-          <a href="#tweet-text"><img src="/images/down-chevron-green.png" alt="down-chevron"></a>
+          <img id="composer-toggler" src="/images/down-chevron-green.png" alt="down-chevron-green">
       </div>
     </nav>
+
+    <!-- Scroll-to-top floating button -->
+    <a href="#" id="scroll-to-top">
+      <img src="/images/up-chevron-blue.png" alt="up-chevron-blue">
+    </a>
 
     <!-- Header (profile avatar and name) content -->
     <header>
