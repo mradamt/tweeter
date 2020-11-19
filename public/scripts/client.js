@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
+// Escape function to prevent XSS injection
+const escape = (str) => {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // Insert tweet data into html template ready to display on main page
 const createTweetElement = function(tweetObj) {
   // Calculate tweet age in days, rounded down
@@ -11,17 +18,18 @@ const createTweetElement = function(tweetObj) {
     (new Date() - tweetObj.created_at) /
     (1000 * 60 * 60 * 24)
   );
-  // Insert tweet data into html template as it should appear in tweets feed section
+  /* Insert tweet data into tweets feed html template
+   * IMPORTANT: escape all user-generated values for potential risk of XSS */
   let tweetHtml = `
     <article class="tweet">
       <header>
         <div>
           <img src="${tweetObj.user.avatars}">
-          <span>${tweetObj.user.name}</span>
+          <span>${escape(tweetObj.user.name)}</span>
         </div>
-        <span class="handle">${tweetObj.user.handle}</span>
+        <span class="handle">${escape(tweetObj.user.handle)}</span>
       </header>
-      <p>${tweetObj.content.text}</p>
+      <p>${escape(tweetObj.content.text)}</p>
       <footer>
         <span>${tweetAge} days ago</span>
         <div class="tweet-actions">
