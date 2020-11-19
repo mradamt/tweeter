@@ -1,6 +1,5 @@
 .new-tweet {
-  display: flex;
-  flex-wrap: wrap;
+  display: none;
 }
 
 #tweet-text {
