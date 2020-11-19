@@ -34,6 +34,7 @@ article.tweet p {
   border-bottom: 4px solid black;
   padding-bottom: 24px;
   margin: 12px;
+  overflow-wrap: anywhere;
 }
 
 article.tweet footer {
