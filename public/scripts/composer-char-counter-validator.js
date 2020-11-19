@@ -5,7 +5,7 @@ $(document).ready(function() {
   };
 
   // Set initial state (empty tweet)
-  $('#tweet-validation-msg').text(valdiationMsg.emptyTweet).fadeOut(100);
+  $('#tweet-validation-msg').hide().text(valdiationMsg.emptyTweet);
 
   /* Event listener to track character count of text input,
    * update 'counter' immediately, and change colour of counter

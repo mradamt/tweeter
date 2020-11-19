@@ -46,7 +46,7 @@ const createTweetElement = function(tweetObj) {
 /*****************************************
  *  On full document load
  *****************************************/
-$(document).ready(() => {
+$(document).ready(function() {
 
   /* Fetch tweets array from server and pass array to render function */
   const loadTweets = function(n) {
