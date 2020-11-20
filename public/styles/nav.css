@@ -1,15 +1,12 @@
 /* Set nav padding to (100 - body font size) / 2 */
 nav {
-  background-color: #4056A1;
   color: #ffffff;
-  height: 100px;
-  padding: 38px;
+  padding: 1em;
   display: flex;
   justify-content: space-between;
   text-align: center;
-  position: fixed;
-  top: 0;
   width: 100%;
+  position: absolute;
 }
 
 nav #tweeter-logo {
@@ -29,4 +26,10 @@ nav #tweeter-logo {
 
 #navbar-right-side img:hover {
   transform: scale(1.4);
+}}}  height: 1em;
+  transition: transform 0.1s;
+}
+
+#navbar-right-side:hover {
+  cursor: pointer;
 }

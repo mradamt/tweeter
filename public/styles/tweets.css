@@ -1,14 +1,14 @@
 article.tweet {
-  border: 3px solid black;
+  border: 0.1em solid black;
   display: flex;
   flex-direction: column;
-  margin-top: 36px;
+  margin-top: 1.5em;
 }
 
 article.tweet header {
   display: flex;
   justify-content: space-between;
-  padding: 24px;
+  padding: 1em;
   align-items: center;
   font-weight: 300;
 }
@@ -19,8 +19,8 @@ article.tweet header div {
 }
 
 article.tweet header img {
-  height: 48px;
-  padding-right: 12px;
+  height: 2em;
+  padding-right: 0.5em;
 }
 
 article.tweet .handle {
@@ -29,26 +29,26 @@ article.tweet .handle {
 }
 
 article.tweet p {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 2em;
+  padding-right: 2em;
   border-bottom: 4px solid black;
-  padding-bottom: 24px;
-  margin: 12px;
+  padding-bottom: 1em;
+  margin: 0.5em;
   overflow-wrap: anywhere;
 }
 
 article.tweet footer {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 24px;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 0.66em;
 }
 
 article.tweet footer img {
-  height: 24px;
+  height: 1em;
   padding-left: 3px;
 }
 
