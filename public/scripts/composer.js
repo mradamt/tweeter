@@ -7,12 +7,18 @@ $(document).ready(function() {
     $('.navbar-right-side img').css('transform', 'scale(1)')
   })
   
-  /* Toggle tweet composer section into/out of view on click
-   * and focus curser into textarea ready to type */
-  $('.composer-toggler').click(function() {
-    $('.new-tweet').slideToggle('fast')
+  /* Function to clean up styles added composer textarea on slideDown() 
+   * or slideToggle(), and scroll the window so composer is in view */
+  const tidyUpComposer = () => {
     $('#tweet-text').removeAttr('style').focus()
     $(window).scrollTop(0)
+  }
+
+  /* Toggle tweet composer section into/out of view on click
+   * and focus curser into textarea ready to type */
+  $('#navbar-right-side').click(function() {
+    $('.new-tweet').slideToggle('fast')
+    tidyUpComposer();
   })
 
   /* Scroll-to-top button appears when window is scrolled down*/
@@ -27,8 +33,7 @@ $(document).ready(function() {
   /* Scroll to top and ensure composer is OPEN when we get there */
   $('#scroll-to-top').click(function() {
     $('.new-tweet').slideDown('fast')
-    $('#tweet-text').removeAttr('style').focus()
-    $(window).scrollTop(0)
+    tidyUpComposer()
   })
   
 })
