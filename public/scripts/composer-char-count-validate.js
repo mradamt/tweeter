@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Tweet char validation/error messages
   const valdiationMsg = {
     emptyTweet: 'Empty tweets not allowed to be posted',
     tooLong: 'Too long. Tweets are limited to 140 characters'
@@ -13,10 +14,12 @@ $(document).ready(function() {
    * Uses 'input' event not 'change' event because "Unlike the input event, the change
    * event is not necessarily fired for each alteration to an element's value."
    * - MDN docs.../change_event
+   * NOTE: In separate file, on tweet submission counter is reset to 140
    */
-  document.getElementById('tweet-text').addEventListener('input', function() {
-    // Traverse tree to find .counter class (output tag) and save to variable
-    const $counterEl = $(this).parent().find(".counter");
+  $('#tweet-text').on('input', function() {
+    /* Just for fun, because you'll notice counter is an id,
+     * traverse tree to find .counter class (output tag) and save to variable */
+    const $counterEl = $(this).parent().find("#counter");
 
     // Update counter value immediately with each char entered/deleted
     $counterEl.val(140 - $(this).val().length);

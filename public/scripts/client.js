@@ -94,8 +94,10 @@ $(document).ready(function() {
         method: 'post',
         data: $(this).serialize(),
       })
+      // Clear compose, reset char counter, prepend new tweet
       .done(function() {
         $data.val('');
+        $('#counter').val(140)
         loadTweets(1);
       });
   });
