@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -32,4 +33,16 @@ body {
   width: 90%;
   flex-direction: column;
   margin: auto;
+}
+
+#scroll-to-top {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  bottom: 20px;
+  right: 30px;
+}
+
+#scroll-to-top {
+  height: 80px;
 }

@@ -22,8 +22,8 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter-validator.js"></script>
-    <script type="text/javascript" src="/scripts/composer-toggler.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-count-validate.js"></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
     <script type="text/javascript" src="/scripts/textarea-auto-resize.js"></script>
   </head>
 
@@ -31,11 +31,14 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span id="tweeter-logo">tweeter</span>
-      <div id="navbar-right-side">
+      <div class="navbar-right-side composer-toggler">
           <span><strong>Write</strong> a new tweet</span>
-          <a href="#tweet-text"><img src="/images/down-chevron-green.png" alt="down-chevron"></a>
+          <img src="/images/down-chevron-green.png" alt="down-chevron-green">
       </div>
     </nav>
+
+    <!-- Scroll-to-top floating button -->
+      <img id="scroll-to-top" src="/images/up-chevron-blue.png" alt="up-chevron-blue">
 
     <!-- Header (profile avatar and name) content -->
     <header>
