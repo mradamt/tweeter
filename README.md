@@ -37,6 +37,9 @@ This repository began as starter code which offered the server-side ready to go.
 ## Screenshots
 
 !["main-feed--mobile"](https://github.com/mradamt/tweeter/blob/master/docs/screenshots/main-feed--mobile.png)
+
 !["main-feed-compose--mobile"](https://github.com/mradamt/tweeter/blob/master/docs/screenshots/main-feed-compose--mobile.png)
+
 !["main-feed-desktop"](https://github.com/mradamt/tweeter/blob/master/docs/screenshots/main-feed-desktop.png)
+
 !["tweet-info-on-hover"](https://github.com/mradamt/tweeter/blob/master/docs/screenshots/tweet-info-on-hover.png)
