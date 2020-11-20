@@ -47,7 +47,8 @@ article.tweet footer {
   font-size: 0.66em;
 }
 
-article.tweet footer img {
+article .tweet-actions img {
+  display: none;
   height: 1em;
   padding-left: 3px;
 }
@@ -67,4 +68,8 @@ article.tweet:hover header div {
 
 article.tweet:hover .handle {
   display: flex;
+}
+
+article.tweet:hover .tweet-actions img {
+  display: inline-block;
 }
