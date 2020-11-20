@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
   /* 'Zoom' effect on icon below 'write a tweet' in navbar */
-  $('.navbar-right-side').hover(function() {
-    $('.navbar-right-side img').css('transform', 'scale(1.25)');
+  $('#navbar-right-side').hover(function() {
+    $('#navbar-right-side img').css('transform', 'scale(1.25)');
   }, function() {
-    $('.navbar-right-side img').css('transform', 'scale(1)');
+    $('#navbar-right-side img').css('transform', 'scale(1)');
   });
   
   /* Function to clean up styles added composer textarea on slideDown()
@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   /* Scroll-to-top button appears when window is scrolled down*/
   if ($(window).scroll(function() {
-    if ($(this).scrollTop() > 800) {
+    if ($(this).scrollTop() > 400) {
       $('#scroll-to-top').fadeIn();
     } else {
       $('#scroll-to-top').fadeOut();
