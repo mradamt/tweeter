@@ -26,7 +26,7 @@ nav #tweeter-logo {
 
 #navbar-right-side img:hover {
   transform: scale(1.4);
-}}}  height: 1em;
+  height: 1em;
   transition: transform 0.1s;
 }
 
