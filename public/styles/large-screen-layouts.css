@@ -1,0 +1,42 @@
+
+/* Tablet layout */
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 24px;
+  }
+  
+}
+
+/* Desktop layout */
+@media only screen and (min-width: 1024px) {
+  body {
+    margin-top: 4em;
+    font-size: 24px;
+  }
+
+  nav {
+    background-color: #4056A1;
+    height: 4em;
+    padding: 1.5em;
+    top: 0;
+    position: fixed;
+  }
+
+  #avatar-header {
+    width: 28%;
+    margin-right: 2%;
+    margin-left: 4%;
+    margin-top: 1.5em;
+    max-width: 16em;
+    float: left;
+  }
+  
+  .container {
+    width: 60%;
+    margin-right: 4%;
+    margin-left: 2%;
+    float: right;
+  }
+
+
+}

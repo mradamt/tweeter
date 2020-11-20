@@ -1,5 +1,5 @@
 #avatar-header {
-  height: 400px;
+  height: 16em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,5 +10,6 @@
 }
 
 #avatar-header img {
-  margin-top: 25px;
+  height: 10em;
+  margin-top: 2em;
 }
