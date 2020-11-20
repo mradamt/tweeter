@@ -97,7 +97,7 @@ $(document).ready(function() {
       // Clear compose, reset char counter, prepend new tweet
       .done(function() {
         $data.val('');
-        $('#counter').val(140)
+        $('#counter').val(140);
         loadTweets(1);
       });
   });
