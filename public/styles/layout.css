@@ -39,9 +39,10 @@ body {
   position: fixed;
   z-index: 99;
   bottom: 20px;
-  right: 30px;
+  right: 20px;
+  height: 3em;
 }
 
-#scroll-to-top {
-  height: 80px;
+#scroll-to-top:hover {
+  cursor: pointer;
 }
