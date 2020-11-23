@@ -18,7 +18,7 @@ $(document).ready(function() {
    */
   $('#tweet-text').on('input', function() {
     /* Just for fun, because you'll notice counter is an id,
-     * traverse tree to find .counter class (output tag) and save to variable */
+     * traverse tree to find id #counter (output tag) and save to variable */
     const $counterEl = $(this).parent().find("#counter");
 
     // Update counter value immediately with each char entered/deleted
@@ -26,9 +26,9 @@ $(document).ready(function() {
 
     // Change COLOR of counter element to red when negative
     if ($counterEl.val() < 0) {
-      $('.counter').css("color", "#ff0033");
+      $('#counter').css("color", "#ff0033");
     } else {
-      $('.counter').css("color", "inherit");
+      $('#counter').css("color", "inherit");
     }
       
     // Modify validation messages for too short/long tweets based on current length
