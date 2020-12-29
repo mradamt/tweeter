@@ -39,8 +39,8 @@ body {
   bottom: 20px;
   right: 20px;
   height: 3em;
-}
 
-#scroll-to-top:hover {
-  cursor: pointer;
+  :hover {
+    cursor: pointer;
+  }
 }
