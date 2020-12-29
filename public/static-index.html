@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Responsive design -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css">
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css">
+    <link rel="stylesheet" href="/styles/large-screen-layouts.css" type="text/css">
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- App JS -->
+    <!-- <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-count-validate.js"></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
+    <script type="text/javascript" src="/scripts/textarea-auto-resize.js"></script> -->
+  </head>
+
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <span id="tweeter-logo">tweeter</span>
+      <div id="navbar-right-side">
+          <span><strong>Write</strong> a new tweet</span>
+          <img src="/images/down-arrow.png" alt="down-chevron-green">
+      </div>
+    </nav>
+
+    <!-- Scroll-to-top floating button -->
+      <img id="scroll-to-top" src="/images/up-arrow2.png" alt="up-chevron-blue">
+
+    <!-- Header (profile avatar and name) content -->
+    <header>
+      <div id="avatar-header">
+        <img src="/images/profile-hex.png"> 
+        <h2>Betty Boop</h2>
+      </div>
+    </header>
+  
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <!-- Compose New Tweet section -->
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text"></label>
+          <textarea name="text" id="tweet-text" placeholder="Up here for twooting down there for dancing"></textarea>
+          <label for="tweet-text" id="tweet-validation-msg"></label>
+          <footer>
+            <button type="submit">Tweet</button>
+            <output name="counter" id="counter" for="tweet-text">140</output>
+          </footer>
+        </form>
+      </section>
+
+      <!-- Display Tweets feed section (filled dynamically) -->
+      <section id="tweets-container">
+        <article class="tweet">
+          <header>
+            <div>
+              <img src="https://i.imgur.com/nlhLi3I.png">
+              <span>Descartes</span>
+            </div>
+            <span class="handle">@rd</span>
+          </header>
+          <p>Je pense , donc je suis</p>
+          <footer>
+            <span>1 days ago</span>
+            <div class="tweet-actions">
+              <a href="#"><img src="/images/flag-tweet.png" alt="Flag tweet"></a>
+              <a href="#"><img src="/images/share-tweet.png" alt="Share tweet"></a>
+              <a href="#"><img src="/images/heart-tweet.png" alt="Heart this tweet"></a>
+            </div>
+          </footer>
+        </article>
+        
+        <article class="tweet">
+          <header>
+            <div>
+              <img src="https://i.imgur.com/73hZDYK.png">
+              <span>Newton</span>
+            </div>
+            <span class="handle">@SirIsaac</span>
+          </header>
+          <p>If I have seen further it is by standing on the shoulders of giants</p>
+          <footer>
+            <span>2 days ago</span>
+            <div class="tweet-actions">
+              <a href="#"><img src="/images/flag-tweet.png" alt="Flag tweet"></a>
+              <a href="#"><img src="/images/share-tweet.png" alt="Share tweet"></a>
+              <a href="#"><img src="/images/heart-tweet.png" alt="Heart this tweet"></a>
+            </div>
+          </footer>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
+
