@@ -1,4 +1,4 @@
-$font-stack: 'Bungee', cursive;
+$custom-font: 'Bungee', cursive;
 
 /* Set nav padding to (100 - body font size) / 2 */
 nav {
@@ -11,7 +11,7 @@ nav {
   position: absolute;
 
   #tweeter-logo {
-    font-family: $font-stack;
+    font-family: $custom-font;
   }
 }
 

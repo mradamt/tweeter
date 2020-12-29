@@ -1,5 +1,28 @@
+$custom-font: 'Bungee', cursive;
+
 .new-tweet {
   display: none;
+
+  form {
+    width: 100%;
+    font-weight: 700;
+
+    footer {
+      font-family: $custom-font;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0.5em;
+      padding-right: 0.5em;
+      padding-bottom: 0.5em;
+    }
+  }
+
+  button {
+    color: #fff;
+    background-color: #4056A1;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+  }
 }
 
 #tweet-text {
@@ -12,12 +35,6 @@
   padding: 0.5em;
 }
 
-
-.new-tweet form {
-  width: 100%;
-  font-weight: 700;
-}
-
 #tweet-validation-msg {
   font-weight: 300;
   color: #ff0033;
@@ -25,22 +42,6 @@
   padding-top: 0.5em;
   padding-left: 0.5em;
   font-style: italic;
-}
-
-.new-tweet form footer {
-  font-family: 'Bungee', cursive;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 0.5em;
-  padding-right: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-.new-tweet button {
-  color: #fff;
-  background-color: #4056A1;
-  padding-left: 0.3em;
-  padding-right: 0.3em;
 }
 
 #tweet-text:focus, .new-tweet button:focus {
