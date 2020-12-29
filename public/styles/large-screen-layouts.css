@@ -1,11 +1,9 @@
-
 /* Tablet layout */
 @media only screen and (min-width: 768px) {
   body {
     font-size: 24px;
   }
 }
-
 /* Desktop layout */
 @media only screen and (min-width: 1024px) {
   body {
@@ -29,7 +27,7 @@
     max-width: 16em;
     float: left;
   }
-  
+
   .container {
     width: 60%;
     margin-right: 4%;

@@ -3,48 +3,48 @@ article.tweet {
   display: flex;
   flex-direction: column;
   margin-top: 1.5em;
-}
 
-article.tweet header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
-  align-items: center;
-  font-weight: 300;
-}
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    align-items: center;
+    font-weight: 300;
 
-article.tweet header div {
-  display: flex;
-  align-items: center;
-}
+    div {
+      display: flex;
+      align-items: center;
+    }
+  
+    img {
+      height: 2em;
+      padding-right: 0.5em;
+    }
+  }
 
-article.tweet header img {
-  height: 2em;
-  padding-right: 0.5em;
-}
+  .handle {
+    display: none;
+    color: #c6c6c6
+  }
 
-article.tweet .handle {
-  display: none;
-  color: #c6c6c6
-}
+  p {
+    padding-left: 2em;
+    padding-right: 2em;
+    border-bottom: 4px solid black;
+    padding-bottom: 1em;
+    margin: 0.5em;
+    overflow-wrap: anywhere;
+  }
 
-article.tweet p {
-  padding-left: 2em;
-  padding-right: 2em;
-  border-bottom: 4px solid black;
-  padding-bottom: 1em;
-  margin: 0.5em;
-  overflow-wrap: anywhere;
-}
-
-article.tweet footer {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
-  font-weight: 300;
-  font-size: 0.66em;
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-weight: 300;
+    font-size: 0.66em;
+  }
 }
 
 article .tweet-actions img {
@@ -56,20 +56,20 @@ article .tweet-actions img {
 /* Hover actions */
 article.tweet:hover {
   box-shadow: 6px 6px 8px #747474;
-}
 
-article.tweet:hover footer {
-  font-weight: 400;
-}
+  footer {
+    font-weight: 400;
+  }
 
-article.tweet:hover header div {
-  font-weight: 400;
-}
+  header div {
+    font-weight: 400;
+  }
 
-article.tweet:hover .handle {
-  display: flex;
-}
+  .handle {
+    display: flex;
+  }
 
-article.tweet:hover .tweet-actions img {
-  display: inline-block;
+  .tweet-actions img {
+    display: inline-block;
+  }
 }

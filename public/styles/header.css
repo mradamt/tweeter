@@ -7,9 +7,8 @@
   background-color: #D3163B;
   background-image: url(../images/argyle.png);
   color: white;
-
-  img {
-    height: 10em;
-    margin-top: 2em;
-  }
+}
+#avatar-header img {
+  height: 10em;
+  margin-top: 2em;
 }

@@ -1,3 +1,5 @@
+$font-stack: 'Bungee', cursive;
+
 /* Set nav padding to (100 - body font size) / 2 */
 nav {
   color: #ffffff;
@@ -7,25 +9,30 @@ nav {
   text-align: center;
   width: 100%;
   position: absolute;
+
+  #tweeter-logo {
+    font-family: $font-stack;
+  }
 }
-nav #tweeter-logo {
-  font-family: "Bungee", cursive;
-}
+
 
 #navbar-right-side {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-#navbar-right-side img {
-  height: 24px;
-  transition: transform 0.1s;
-}
-#navbar-right-side img :hover {
-  transform: scale(1.4);
-  height: 1em;
-  transition: transform 0.1s;
-}
-#navbar-right-side :hover {
-  cursor: pointer;
+
+  img {
+    height: 24px;
+    transition: transform 0.1s;
+    
+    :hover {
+      transform: scale(1.4);
+      height: 1em;
+      transition: transform 0.1s;
+    }
+  }
+
+  :hover {
+    cursor: pointer;
+  }
 }
